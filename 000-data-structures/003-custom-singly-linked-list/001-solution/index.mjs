@@ -67,10 +67,20 @@ console.log(customLinkedList.printLinkedList());
 
 console.log('');
 
-customLinkedList.insertFirst(1);
+customLinkedList.insertFirst(6);
 customLinkedList.insertLast(7);
 console.log(customLinkedList.printLinkedList());
 
 console.log('');
 console.log(customLinkedList.search(7));
 console.log(customLinkedList.search(3));
+
+console.log('');
+console.log(customLinkedList.size());
+
+console.log('');
+console.log(customLinkedList.isEmpty());
+
+console.log('');
+customLinkedList.reverse();
+console.log(customLinkedList.printLinkedList());

@@ -2,6 +2,13 @@
  * Custom Singly Linked List
  */
 
+class Node {
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
 class CustomLinkedList {
   constructor() {
     this.head = null;
@@ -30,30 +37,13 @@ class CustomLinkedList {
     this.length++;
   }
 
-  getNodeAt(index) {
-    if (index < 0 || index >= this.length) {
-      return null;
-    }
-
-    let current = this.head;
-
-    let i = 0;
-    while (i < index) {
-      current = current.next;
-      i++;
-    }
-    
-    return current;
-
-  }
-
   insertAt(index, data) {
     if (index === 0) {
       this.insertFirst(data);
     } else if (index === this.length) {
       this.insertLast(data);
     } else {
-      const prevNode = this.getNodeAt(index - 1);
+      const prevNode = this.#getNodeAt(index - 1);
       this.insertAfter(prevNode, data);
     }
   }
@@ -121,7 +111,7 @@ class CustomLinkedList {
     if (this.head === this.tail) {
       this.head = this.tail = null;
     } else {
-      const prevNode = this.getNodeAt(this.length - 2);
+      const prevNode = this.#getNodeAt(this.length - 2);
       prevNode.next = null;
       this.tail = prevNode;
     }
@@ -133,7 +123,7 @@ class CustomLinkedList {
     if (index === 0) {
       this.removeFirst();
     } else {
-      const previous = this.getNodeAt(index - 1);
+      const previous = this.#getNodeAt(index - 1);
       previous.next = previous.next.next;
 
       if (index === this.length - 1) {
@@ -194,8 +184,31 @@ class CustomLinkedList {
     return false;
   }
 
+  reverse() {
+    if (!this.head || !this.head.next) {
+      return;
+    }
+
+    let prev = null;
+    let current = this.head;
+
+    while (current) {
+      const next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+
+    this.tail = this.head;
+    this.head = prev;
+  }
+
   size() {
     return this.length;
+  }
+
+  isEmpty() {
+    return this.length === 0;
   }
 
   printLinkedList() {
@@ -211,12 +224,22 @@ class CustomLinkedList {
 
     return str;
   }
-}
 
-class Node {
-  constructor(data, next = null) {
-    this.data = data;
-    this.next = next;
+  #getNodeAt(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    let current = this.head;
+
+    let i = 0;
+    while (i < index) {
+      current = current.next;
+      i++;
+    }
+
+    return current;
+
   }
 }
 

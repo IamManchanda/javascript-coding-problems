@@ -74,6 +74,83 @@ class CustomLinkedList {
     }
   }
 
+  removeFirst() {
+    if (!this.head) {
+      return;
+    }
+
+    this.head = this.head.next;
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return;
+    }
+
+    if (this.head === this.tail) {
+      this.head = this.tail = null;
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+
+    while (current !== this.tail) {
+      previous = current;
+      current = current.next;
+    }
+
+    previous.next = null;
+    this.tail = previous;
+  }
+  
+  removeAt(index) {
+    if (index === 0) {
+      this.removeFirst();
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+
+    let i = 0;
+    while (i < index) {
+      previous = current;
+      current = current.next;
+      i++;
+    }
+
+    previous.next = current.next;
+  }
+
+  removeAfter(prevNode) {
+    if (!prevNode || !prevNode.next) {
+      return;
+    }
+
+    prevNode.next = prevNode.next.next;
+  }
+
+  removeBefore(nextNode) {
+    if (!nextNode) {
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+
+    while (current !== nextNode) {
+      previous = current;
+      current = current.next;
+    }
+
+    if (previous === this.head) {
+      this.head = nextNode;
+    }
+
+    previous.next = nextNode;
+  }
+
   printLinkedList() {
     let str = '';
 

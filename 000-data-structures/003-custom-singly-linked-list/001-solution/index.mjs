@@ -26,9 +26,47 @@ customLinkedList.insertAt(2, 5);
 console.log(customLinkedList.printLinkedList());
 
 console.log('');
+
 customLinkedList.insertAfter(customLinkedList.head.next.next, 6);
 console.log(customLinkedList.printLinkedList());
 
 console.log('');
+
 customLinkedList.insertBefore(customLinkedList.head.next.next, 7);
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.insertAfter(customLinkedList.head.next.next, 8);
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.removeFirst();
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.removeLast();
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.removeAt(1);
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.removeAfter(customLinkedList.head.next.next);
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.removeBefore(customLinkedList.head.next);
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.insertFirst(1);
+customLinkedList.insertLast(7);
 console.log(customLinkedList.printLinkedList());

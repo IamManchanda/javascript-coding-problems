@@ -1,5 +1,5 @@
 /**
- * CustomLinkedList
+ * CustomLinkedList (Singly Linked List)
  */
 
 class CustomLinkedList {
@@ -22,6 +22,55 @@ class CustomLinkedList {
     } else {
       this.tail.next = new Node(data);
       this.tail = this.tail.next;
+    }
+  }
+
+  insertAt(index, data) {
+    if (index === 0) {
+      this.insertFirst(data);
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+
+    let i = 0;
+    while (i < index) {
+      previous = current;
+      current = current.next;
+      i++;
+    }
+
+    previous.next = new Node(data, current);
+  }
+
+  insertAfter(prevNode, data) {
+    if (!prevNode) {
+      return;
+    }
+
+    const newNode = new Node(data, prevNode.next);
+    prevNode.next = newNode;
+  }
+
+  insertBefore(nextNode, data) {
+    if (!nextNode) {
+      return;
+    }
+
+    const newNode = new Node(data, nextNode);
+    let current = this.head;
+    let previous = null;
+
+    while (current !== nextNode) {
+      previous = current;
+      current = current.next;
+    }
+
+    previous.next = newNode;
+
+    if (nextNode === this.head) {
+      this.head = newNode;
     }
   }
 

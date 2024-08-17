@@ -43,7 +43,9 @@ stack.clear();
 console.log(stack.printStack());
 
 console.log('');
+
 console.log(stack.size());
 
 console.log('');
+
 console.log(stack.isEmpty());

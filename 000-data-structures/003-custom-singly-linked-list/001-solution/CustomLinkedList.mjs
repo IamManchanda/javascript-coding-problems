@@ -151,6 +151,20 @@ class CustomLinkedList {
     previous.next = nextNode;
   }
 
+  search(key) {
+    let current = this.head;
+
+    while (current) {
+      if (current.data === key) {
+        return true;
+      }
+
+      current = current.next;
+    }
+
+    return false;
+  }
+
   printLinkedList() {
     let str = '';
 

@@ -70,3 +70,7 @@ console.log('');
 customLinkedList.insertFirst(1);
 customLinkedList.insertLast(7);
 console.log(customLinkedList.printLinkedList());
+
+console.log('');
+console.log(customLinkedList.search(7));
+console.log(customLinkedList.search(3));

@@ -6,6 +6,7 @@ class CustomLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
+    this.length = 0;
   }
 
   insertFirst(data) {
@@ -14,6 +15,8 @@ class CustomLinkedList {
     if (!this.tail) {
       this.tail = this.head;
     }
+
+    this.length++;
   }
 
   insertLast(data) {
@@ -23,25 +26,36 @@ class CustomLinkedList {
       this.tail.next = new Node(data);
       this.tail = this.tail.next;
     }
+
+    this.length++;
+  }
+
+  getNodeAt(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    let current = this.head;
+
+    let i = 0;
+    while (i < index) {
+      current = current.next;
+      i++;
+    }
+    
+    return current;
+
   }
 
   insertAt(index, data) {
     if (index === 0) {
       this.insertFirst(data);
-      return;
+    } else if (index === this.length) {
+      this.insertLast(data);
+    } else {
+      const prevNode = this.getNodeAt(index - 1);
+      this.insertAfter(prevNode, data);
     }
-
-    let current = this.head;
-    let previous = null;
-
-    let i = 0;
-    while (i < index) {
-      previous = current;
-      current = current.next;
-      i++;
-    }
-
-    previous.next = new Node(data, current);
   }
 
   insertAfter(prevNode, data) {
@@ -51,6 +65,12 @@ class CustomLinkedList {
 
     const newNode = new Node(data, prevNode.next);
     prevNode.next = newNode;
+
+    if (prevNode === this.tail) {
+      this.tail = newNode;
+    }
+
+    this.length++;
   }
 
   insertBefore(nextNode, data) {
@@ -58,20 +78,26 @@ class CustomLinkedList {
       return;
     }
 
-    const newNode = new Node(data, nextNode);
+    if (nextNode === this.head) {
+      this.insertFirst(data);
+      return;
+    }
+
     let current = this.head;
     let previous = null;
 
-    while (current !== nextNode) {
+    while (current && current !== nextNode) {
       previous = current;
       current = current.next;
     }
 
-    previous.next = newNode;
-
-    if (nextNode === this.head) {
-      this.head = newNode;
+    if (!current) {
+      return;
     }
+
+    const newNode = new Node(data, current);
+    previous.next = newNode;
+    this.length++;
   }
 
   removeFirst() {
@@ -80,6 +106,11 @@ class CustomLinkedList {
     }
 
     this.head = this.head.next;
+    this.length--;
+
+    if (!this.head) {
+      this.tail = null;
+    }
   }
 
   removeLast() {
@@ -89,38 +120,28 @@ class CustomLinkedList {
 
     if (this.head === this.tail) {
       this.head = this.tail = null;
-      return;
+    } else {
+      const prevNode = this.getNodeAt(this.length - 2);
+      prevNode.next = null;
+      this.tail = prevNode;
     }
 
-    let current = this.head;
-    let previous = null;
-
-    while (current !== this.tail) {
-      previous = current;
-      current = current.next;
-    }
-
-    previous.next = null;
-    this.tail = previous;
+    this.length--;
   }
   
   removeAt(index) {
     if (index === 0) {
       this.removeFirst();
-      return;
+    } else {
+      const previous = this.getNodeAt(index - 1);
+      previous.next = previous.next.next;
+
+      if (index === this.length - 1) {
+        this.tail = previous;
+      }
+
+      this.length--;
     }
-
-    let current = this.head;
-    let previous = null;
-
-    let i = 0;
-    while (i < index) {
-      previous = current;
-      current = current.next;
-      i++;
-    }
-
-    previous.next = current.next;
   }
 
   removeAfter(prevNode) {
@@ -129,26 +150,34 @@ class CustomLinkedList {
     }
 
     prevNode.next = prevNode.next.next;
+
+    if (!prevNode.next) {
+      this.tail = prevNode;
+    }
+
+    this.length--;
   }
 
   removeBefore(nextNode) {
-    if (!nextNode) {
+    if (!nextNode || nextNode === this.head) {
       return;
     }
 
     let current = this.head;
     let previous = null;
 
-    while (current !== nextNode) {
+    while (current && current !== nextNode) {
       previous = current;
       current = current.next;
     }
 
-    if (previous === this.head) {
+    if (!previous) {
       this.head = nextNode;
+    } else {
+      previous.next = nextNode;
     }
 
-    previous.next = nextNode;
+    this.length--;
   }
 
   search(key) {
@@ -163,6 +192,10 @@ class CustomLinkedList {
     }
 
     return false;
+  }
+
+  size() {
+    return this.length;
   }
 
   printLinkedList() {

@@ -1,5 +1,5 @@
 /**
- * CustomStack using Arrays
+ * Custom Stack using Arrays
  */
 
 class CustomStack {

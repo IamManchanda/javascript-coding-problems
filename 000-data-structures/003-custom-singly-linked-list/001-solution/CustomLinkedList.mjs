@@ -1,5 +1,5 @@
 /**
- * CustomLinkedList (Singly Linked List)
+ * Custom Singly Linked List
  */
 
 class CustomLinkedList {

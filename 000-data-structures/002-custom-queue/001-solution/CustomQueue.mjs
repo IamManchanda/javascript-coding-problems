@@ -1,5 +1,5 @@
 /**
- * CustomQueue using Arrays
+ * Custom Queue using Arrays
  */
 
 class CustomQueue {

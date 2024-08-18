@@ -207,6 +207,12 @@ class CustomLinkedList {
     return this.length === 0;
   }
 
+  clear() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
   printLinkedList() {
     let str = '';
 

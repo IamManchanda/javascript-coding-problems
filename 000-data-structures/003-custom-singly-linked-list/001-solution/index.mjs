@@ -84,3 +84,12 @@ console.log(customLinkedList.isEmpty());
 console.log('');
 customLinkedList.reverse();
 console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+customLinkedList.clear();
+console.log(customLinkedList.printLinkedList());
+
+console.log('');
+
+console.log(customLinkedList.isEmpty());

@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test:000-data-structures:001-custom-stack:001-solution": "jest 000-data-structures/001-custom-stack/001-solution/__tests__/",
+    "test:000-data-structures:002-custom-queue:001-solution": "jest 000-data-structures/002-custom-queue/001-solution/__tests__/",
     "test": "jest"
   },
   "keywords": [],

@@ -1,4 +1,4 @@
-import CustomLinkedList from './CustomLinkedList.mjs';
+import CustomLinkedList from './CustomLinkedList.js';
 
 const customLinkedList = new CustomLinkedList();
 

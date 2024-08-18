@@ -7,6 +7,8 @@
   "scripts": {
     "test:000-data-structures:001-custom-stack:001-solution": "jest 000-data-structures/001-custom-stack/001-solution/__tests__/",
     "test:000-data-structures:002-custom-queue:001-solution": "jest 000-data-structures/002-custom-queue/001-solution/__tests__/",
+    "log:000-data-structures:003-custom-singly-linked-list:001-solution": "node 000-data-structures/003-custom-singly-linked-list/001-solution/index.js",
+    "log:000-data-structures:004-custom-doubly-linked-list:001-solution": "node 000-data-structures/004-custom-doubly-linked-list/001-solution/index.js",
     "test": "jest"
   },
   "keywords": [],

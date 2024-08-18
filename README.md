@@ -18,16 +18,14 @@ git clone git@github.com:IamManchanda/javascript-coding-problems.git
 cd javascript-coding-problems
 ```
 
-4. Run specific tests, example
-
-```bash
-npm run test:000-data-structures:001-custom-stack:001-solution
-```
-
-5. Run all tests
+4. Run all tests
 
 ```bash
 npm run test
 ```
 
-6. For more details check scripts in `package.json` file
+5. Run all tests, verbose mode
+
+```bash
+npm run test:verbose
+```

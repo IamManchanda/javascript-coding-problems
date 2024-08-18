@@ -166,7 +166,7 @@ class CustomLinkedList {
     this.length--;
   }
 
-  search(key) {
+  contains(key) {
     let current = this.head;
 
     while (current) {

@@ -72,8 +72,8 @@ customLinkedList.insertLast(7);
 console.log(customLinkedList.printLinkedList());
 
 console.log('');
-console.log(customLinkedList.search(7));
-console.log(customLinkedList.search(3));
+console.log(customLinkedList.contains(7));
+console.log(customLinkedList.contains(3));
 
 console.log('');
 console.log(customLinkedList.size());

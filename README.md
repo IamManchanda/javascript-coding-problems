@@ -30,10 +30,4 @@ npm run test:000-data-structures:001-custom-stack:001-solution
 npm run test
 ```
 
-6. For those which don't have tests, check logs, example
-
-```bash
-npm run log:000-data-structures:003-custom-singly-linked-list:001-solution
-```
-
-7. For more details check scripts in `package.json` file
+6. For more details check scripts in `package.json` file

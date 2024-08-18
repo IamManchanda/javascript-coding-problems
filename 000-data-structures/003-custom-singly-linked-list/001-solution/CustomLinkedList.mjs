@@ -233,15 +233,12 @@ class CustomLinkedList {
     }
 
     let current = this.head;
-
-    let i = 0;
-    while (i < index) {
+    
+    for (let i = 0; i < index; i++) {
       current = current.next;
-      i++;
     }
 
     return current;
-
   }
 }
 

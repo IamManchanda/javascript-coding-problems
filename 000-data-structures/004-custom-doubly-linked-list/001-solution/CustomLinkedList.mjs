@@ -218,6 +218,7 @@ class CustomLinkedList {
     }
 
     let current = this.head;
+    
     for (let i = 0; i < index; i++) {
       current = current.next;
     }

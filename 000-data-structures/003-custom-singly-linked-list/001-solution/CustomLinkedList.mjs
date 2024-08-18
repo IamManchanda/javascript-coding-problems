@@ -122,15 +122,11 @@ class CustomLinkedList {
   removeAt(index) {
     if (index === 0) {
       this.removeFirst();
+    } else if (index === this.length - 1) {
+      this.removeLast();
     } else {
-      const previous = this.#getNodeAt(index - 1);
-      previous.next = previous.next.next;
-
-      if (index === this.length - 1) {
-        this.tail = previous;
-      }
-
-      this.length--;
+      const prevNode = this.#getNodeAt(index - 1);
+      this.removeAfter(prevNode);
     }
   }
 

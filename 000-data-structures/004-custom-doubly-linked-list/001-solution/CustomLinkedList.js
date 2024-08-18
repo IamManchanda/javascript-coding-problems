@@ -147,11 +147,28 @@ class CustomLinkedList {
       return;
     }
 
-    if (nextNode === this.tail) {
-      this.removeLast();
-    } else {
-      this.removeAfter(nextNode.prev.prev);
+    if (nextNode === this.head) {
+      this.removeFirst();
+      return;
     }
+
+    const prevNode = nextNode.prev;
+    if (!prevNode) {
+      return;
+    }
+
+    if (prevNode === this.head) {
+      this.head = nextNode;
+    } else {
+      prevNode.prev.next = nextNode;
+      nextNode.prev = prevNode.prev;
+    }
+
+    if (prevNode === this.tail) {
+      this.tail = prevNode.prev;
+    }
+
+    this.length--;
   }
 
   contains(key) {

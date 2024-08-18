@@ -152,15 +152,19 @@ class CustomLinkedList {
     let current = this.head;
     let previous = null;
 
-    while (current && current !== nextNode) {
+    while (current && current.next !== nextNode) {
       previous = current;
       current = current.next;
     }
 
     if (!previous) {
-      this.head = nextNode;
-    } else {
-      previous.next = nextNode;
+      return;
+    }
+
+    previous.next = nextNode;
+
+    if (!previous.next) {
+      this.tail = previous;
     }
 
     this.length--;

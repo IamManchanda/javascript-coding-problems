@@ -18,14 +18,14 @@ git clone git@github.com:IamManchanda/javascript-coding-problems.git
 cd javascript-coding-problems
 ```
 
-1. Change to problem's solution directory, example
+1. Run specific tests, example
 
 ```bash
-cd 000-data-structures/001-custom-stack/001-solution
+npm run test:000-data-structures:001-custom-stack:001-solution
 ```
 
-1. Run the script, example
+1. Run all tests
 
 ```bash
-node index.mjs
+npm run test
 ```

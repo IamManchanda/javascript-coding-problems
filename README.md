@@ -27,5 +27,5 @@ npm run test
 5. Run all tests, verbose mode
 
 ```bash
-npm run test:verbose
+npm run test:v
 ```

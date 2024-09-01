@@ -28,7 +28,6 @@ describe('CustomBST', () => {
     bst.insert(10);
     bst.insert(5);
     bst.insert(15);
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left.key).toBe(5);
     expect(bst.root.right.key).toBe(15);
@@ -46,7 +45,6 @@ describe('CustomBST', () => {
   test('should not insert duplicate keys', () => {
     bst.insert(10);
     bst.insert(10); // Duplicate
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left).toBeNull();
     expect(bst.root.right).toBeNull();
@@ -66,7 +64,6 @@ describe('CustomBST', () => {
   test('should delete a node with one left child correctly', () => {
     bst.insert(10);
     bst.insert(5);
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left.key).toBe(5);
     expect(bst.root.right).toBeNull();
@@ -77,7 +74,6 @@ describe('CustomBST', () => {
     //   5
 
     bst.delete(5);
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left).toBeNull();
     expect(bst.root.right).toBeNull();
@@ -89,7 +85,6 @@ describe('CustomBST', () => {
   test('should delete a node with one right child correctly', () => {
     bst.insert(10);
     bst.insert(15);
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left).toBeNull();
     expect(bst.root.right.key).toBe(15);
@@ -100,7 +95,6 @@ describe('CustomBST', () => {
     //       15
 
     bst.delete(15);
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left).toBeNull();
     expect(bst.root.right).toBeNull();
@@ -115,7 +109,6 @@ describe('CustomBST', () => {
     bst.insert(15);
     bst.insert(3);
     bst.insert(7);
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left.key).toBe(5);
     expect(bst.root.left.left.key).toBe(3);
@@ -153,7 +146,6 @@ describe('CustomBST', () => {
     //     10
 
     bst.delete(20); // Node 20 does not exist
-
     expect(bst.root.key).toBe(10); // Tree should remain unchanged
 
     // Current tree:
@@ -166,7 +158,6 @@ describe('CustomBST', () => {
     bst.insert(15);
     bst.insert(3);
     bst.insert(7);
-
     expect(bst.root.key).toBe(10);
     expect(bst.root.left.key).toBe(5);
     expect(bst.root.left.left.key).toBe(3);
@@ -181,7 +172,6 @@ describe('CustomBST', () => {
     // 3   7
 
     bst.delete(10);
-
     expect(bst.root.key).toBe(15);
     expect(bst.root.left.key).toBe(5);
     expect(bst.root.right).toBeNull();

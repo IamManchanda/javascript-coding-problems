@@ -14,6 +14,8 @@ describe('CustomStack', () => {
 
   test('pop item from the stack', () => {
     stack.push(1, 2, 3);
+    expect(stack.size()).toBe(3);
+
     const popped = stack.pop();
     expect(popped).toBe(3);
     expect(stack.size()).toBe(2);
@@ -21,18 +23,24 @@ describe('CustomStack', () => {
 
   test('peek the top item', () => {
     stack.push(1, 2, 3);
+    expect(stack.size()).toBe(3);
+
     const peeked = stack.peek();
     expect(peeked).toBe(3);
+    expect(stack.size()).toBe(3);
   });
 
-  test('check if the stack is empty', () => {
+  test('check if stack.isEmpty is working correctly', () => {
     expect(stack.isEmpty()).toBe(true);
+
     stack.push(1);
     expect(stack.isEmpty()).toBe(false);
   });
 
   test('clear the stack', () => {
     stack.push(1, 2, 3);
+    expect(stack.size()).toBe(3);
+
     stack.clear();
     expect(stack.size()).toBe(0);
     expect(stack.isEmpty()).toBe(true);
@@ -46,7 +54,10 @@ describe('CustomStack', () => {
 
   test('reverse the stack', () => {
     stack.push(1, 2, 3);
+    expect(stack.size()).toBe(3);
+
     stack.reverse();
+    expect(stack.size()).toBe(3);
     expect(stack.pop()).toBe(1);
     expect(stack.pop()).toBe(2);
     expect(stack.pop()).toBe(3);

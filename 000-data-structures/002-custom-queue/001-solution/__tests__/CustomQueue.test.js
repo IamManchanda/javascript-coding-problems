@@ -14,6 +14,8 @@ describe('CustomQueue', () => {
 
   test('dequeue item from the queue', () => {
     queue.enqueue(1, 2, 3);
+    expect(queue.size()).toBe(3);
+
     const dequeued = queue.dequeue();
     expect(dequeued).toBe(1);
     expect(queue.size()).toBe(2);
@@ -21,18 +23,24 @@ describe('CustomQueue', () => {
 
   test('peek the front item', () => {
     queue.enqueue(1, 2, 3);
+    expect(queue.size()).toBe(3);
+
     const peeked = queue.peek();
     expect(peeked).toBe(1);
+    expect(queue.size()).toBe(3);
   });
 
-  test('check if the queue is empty', () => {
+  test('check if queue.isEmpty is working correctly', () => {
     expect(queue.isEmpty()).toBe(true);
+    
     queue.enqueue(1);
     expect(queue.isEmpty()).toBe(false);
   });
 
   test('clear the queue', () => {
     queue.enqueue(1, 2, 3);
+    expect(queue.size()).toBe(3);
+
     queue.clear();
     expect(queue.size()).toBe(0);
     expect(queue.isEmpty()).toBe(true);
@@ -46,7 +54,10 @@ describe('CustomQueue', () => {
 
   test('reverse the queue', () => {
     queue.enqueue(1, 2, 3);
+    expect(queue.size()).toBe(3);
+
     queue.reverse();
+    expect(queue.size()).toBe(3);
     expect(queue.dequeue()).toBe(3);
     expect(queue.dequeue()).toBe(2);
     expect(queue.dequeue()).toBe(1);

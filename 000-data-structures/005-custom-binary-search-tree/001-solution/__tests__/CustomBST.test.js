@@ -185,4 +185,219 @@ describe('CustomBST', () => {
     //  / \
     // 3   7
   });
+
+  test('should return an empty array for in-order traversal of an empty tree', () => {
+    // Current tree: (empty)
+
+    const result = bst.inOrderTraversal();
+    expect(result).toEqual([]);
+
+    // Expected in-order traversal: (empty)
+  });
+
+  test('should perform in-order traversal correctly', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(12);
+    bst.insert(18);
+    
+    // Current tree:
+    //     10
+    //    /  \
+    //   5    15
+    //  / \   / \
+    // 3   7 12 18
+
+    const result = bst.inOrderTraversal();
+    expect(result).toEqual([3, 5, 7, 10, 12, 15, 18]);
+
+    // Expected in-order traversal:
+    // 3, 5, 7, 10, 12, 15, 18
+  });
+
+  test('should handle in-order traversal after deleting a node', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(12);
+    bst.insert(18);
+
+    let result;
+
+    // Current tree:
+    //     10
+    //    /  \
+    //   5    15
+    //  / \   / \
+    // 3   7 12 18
+
+    result = bst.inOrderTraversal();
+    expect(result).toEqual([3, 5, 7, 10, 12, 15, 18]);
+
+    // Expected in-order traversal:
+    // 3, 5, 7, 10, 12, 15, 18
+
+    bst.delete(10);
+
+    // Current tree:
+    //     12
+    //    /  \
+    //   5    15
+    //  / \     \
+    // 3   7    18
+
+    result = bst.inOrderTraversal();
+    expect(result).toEqual([3, 5, 7, 12, 15, 18]);
+
+    // Expected in-order traversal after deleting 10:
+    // 3, 5, 7, 12, 15, 18
+  });
+
+  test('should return an empty array for pre-order traversal of an empty tree', () => {
+    // Current tree: (empty)
+
+    const result = bst.preOrderTraversal();
+    expect(result).toEqual([]);
+
+    // Expected pre-order traversal: (empty)
+  });
+
+  test('should perform pre-order traversal correctly', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(12);
+    bst.insert(18);
+
+    // Current tree:
+    //     10
+    //    /  \
+    //   5    15
+    //  / \   / \
+    // 3   7 12 18
+
+    const result = bst.preOrderTraversal();
+    expect(result).toEqual([10, 5, 3, 7, 15, 12, 18]);
+
+    // Expected pre-order traversal:
+    // 10, 5, 3, 7, 15, 12, 18
+  });
+
+  test('should handle pre-order traversal after deleting a node', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(12);
+    bst.insert(18);
+
+    let result;
+
+    // Current tree:
+    //     10
+    //    /  \
+    //   5    15
+    //  / \   / \
+    // 3   7 12 18
+
+    result = bst.preOrderTraversal();
+    expect(result).toEqual([10, 5, 3, 7, 15, 12, 18]);
+
+    // Expected pre-order traversal:
+    // 10, 5, 3, 7, 15, 12, 18
+
+    bst.delete(10);
+
+    // Current tree:
+    //     12
+    //    /  \
+    //   5    15
+    //  /     / \
+    // 3     12 18
+
+    result = bst.preOrderTraversal();
+    expect(result).toEqual([12, 5, 3, 7, 15, 18]);
+
+    // Expected pre-order traversal after deleting 10:
+    // 12, 5, 3, 7, 15, 18
+  });
+
+  test('should return an empty array for post-order traversal of an empty tree', () => {
+    const result = bst.postOrderTraversal();
+    expect(result).toEqual([]);
+
+    // Expected post-order traversal: (empty)
+  });
+
+  test('should perform post-order traversal correctly', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(12);
+    bst.insert(18);
+
+    // Current tree:
+    //     10
+    //    /  \
+    //   5    15
+    //  / \   / \
+    // 3   7 12 18
+
+    const result = bst.postOrderTraversal();
+    expect(result).toEqual([3, 7, 5, 12, 18, 15, 10]);
+
+    // Expected post-order traversal:
+    // 3, 7, 5, 12, 18, 15, 10
+  });
+
+  test('should handle post-order traversal after deleting a node', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(12);
+    bst.insert(18);
+
+    let result;
+
+    // Current tree:
+    //     10
+    //    /  \
+    //   5    15
+    //  / \   / \
+    // 3   7 12 18
+
+    result = bst.postOrderTraversal();
+    expect(result).toEqual([3, 7, 5, 12, 18, 15, 10]);
+
+    // Expected post-order traversal:
+    // 3, 7, 5, 12, 18, 15, 10
+
+    bst.delete(10);
+
+    // Current tree:
+    //     12
+    //    /  \
+    //   5    15
+    //  /     / \
+    // 3     12 18
+
+    result = bst.postOrderTraversal();
+    expect(result).toEqual([3, 7, 5, 18, 15, 12]);
+
+    // Expected post-order traversal after deleting 10:
+    // 3, 7, 5, 18, 15, 12
+  });
 });
+

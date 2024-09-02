@@ -29,3 +29,9 @@ npm run test
 ```bash
 npm run test:v
 ```
+
+6. Run all tests, watch mode
+
+```bash
+npm run test:w
+```

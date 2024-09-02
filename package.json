@@ -5,8 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:v": "jest --verbose"
+    "test": "jest --coverage",
+    "test:v": "jest --coverage --verbose",
+    "test:w": "jest --coverage --verbose --watchAll"
   },
   "keywords": [],
   "author": "",

@@ -145,8 +145,6 @@ class CustomBST {
       const node = stack.pop();
       result.push(node.key);
 
-      // Note: For right-to-left traversal, push left child first
-
       if (node.right !== null) {
         stack.push(node.right);
       }
@@ -168,7 +166,6 @@ class CustomBST {
   #dfsRecursive(node, result) {
     if (node !== null) {
       result.push(node.key);
-      // Note: For right-to-left traversal, recurse right child first
       this.#dfsRecursive(node.left, result);
       this.#dfsRecursive(node.right, result);
     }
@@ -216,6 +213,59 @@ class CustomBST {
 
     return this.#dfsRecursiveSearch(node.left, key) ||
       this.#dfsRecursiveSearch(node.right, key);
+  }
+
+  breadthFirstTraversal() {
+    const result = [];
+    
+    if (this.root === null) {
+      return result;
+    }
+
+    const queue = [];
+    queue.push(this.root);
+
+    while (queue.length > 0) {
+      const node = queue.shift();
+      result.push(node.key);
+
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+
+    return result;
+  }
+
+  breadthFirstSearch(key) {
+    if (this.root === null) {
+      return false;
+    }
+
+    const queue = [];
+    queue.push(this.root);
+
+    while (queue.length > 0) {
+      const node = queue.shift();
+
+      if (node.key === key) {
+        return true;
+      }
+
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+
+    return false;
   }
 }
 

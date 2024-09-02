@@ -793,5 +793,195 @@ describe('CustomBST', () => {
       expect(bst.depthFirstSearchRecursive(7)).toBe(false);
     });
   });
+
+  describe('breadthFirstTraversal', () => {
+    test('should return an empty array for breadth-first traversal on an empty tree', () => {
+      expect(bst.root).toBeNull();
+
+      // Current tree: (empty)
+
+      const result = bst.breadthFirstTraversal();
+      expect(result).toEqual([]);
+
+      // Expected BFS result: (empty)
+    });
+
+    test('should perform breadth-first traversal correctly on a single-node tree', () => {
+      bst.insert(10);
+
+      // Current tree:
+      //     10
+
+      const result = bst.breadthFirstTraversal();
+      expect(result).toEqual([10]);
+
+      // Expected BFS result:
+      // 10
+    });
+
+    test('should perform breadth-first traversal correctly on a multi-node tree', () => {
+      bst.insert(10);
+      bst.insert(5);
+      bst.insert(15);
+      bst.insert(3);
+      bst.insert(7);
+      bst.insert(12);
+      bst.insert(18);
+
+      // Current tree:
+      //     10
+      //    /  \
+      //   5    15
+      //  / \   / \
+      // 3   7 12 18
+
+      const result = bst.breadthFirstTraversal();
+      expect(result).toEqual([10, 5, 15, 3, 7, 12, 18]);
+
+      // Expected BFS result:
+      // 10, 5, 15, 3, 7, 12, 18
+    });
+
+    test('should handle breadth-first traversal correctly after deleting a node', () => {
+      bst.insert(10);
+      bst.insert(5);
+      bst.insert(15);
+      bst.insert(3);
+      bst.insert(7);
+      bst.insert(12);
+      bst.insert(18);
+
+      let result;
+
+      // Current tree:
+      //     10
+      //    /  \
+      //   5    15
+      //  / \   / \
+      // 3   7 12 18
+
+      result = bst.breadthFirstTraversal();
+      expect(result).toEqual([10, 5, 15, 3, 7, 12, 18]);
+
+      bst.delete(10);
+
+      // Current tree:
+      //     12
+      //    /  \
+      //   5    15
+      //  / \     \
+      // 3   7    18
+
+      result = bst.breadthFirstTraversal();
+      expect(result).toEqual([12, 5, 15, 3, 7, 18]);
+
+      // Expected BFS result after deleting 10:
+      // 12, 5, 15, 3, 7, 18
+    });
+
+    test('should handle breadth-first traversal correctly when the tree has only left children', () => {
+      bst.insert(10);
+      bst.insert(9);
+      bst.insert(8);
+      bst.insert(7);
+      bst.insert(6);
+
+      // Current tree:
+      //         10
+      //        /
+      //       9
+      //      /
+      //     8
+      //    /
+      //   7
+      //  /
+      // 6
+
+      const result = bst.breadthFirstTraversal();
+      expect(result).toEqual([10, 9, 8, 7, 6]);
+
+      // Expected BFS result:
+      // 10, 9, 8, 7, 6
+    });
+
+    test('should handle breadth-first traversal correctly when the tree has only right children', () => {
+      bst.insert(10);
+      bst.insert(11);
+      bst.insert(12);
+      bst.insert(13);
+      bst.insert(14);
+
+      // Current tree:
+      // 10
+      //   \
+      //   11
+      //     \
+      //     12
+      //       \
+      //       13
+      //         \
+      //         14
+
+      const result = bst.breadthFirstTraversal();
+      expect(result).toEqual([10, 11, 12, 13, 14]);
+
+      // Expected BFS result:
+      // 10, 11, 12, 13, 14
+    });
+  });
+
+  describe('breadthFirstSearch', () => {
+    test('should return false for breadth-first search on an empty tree', () => {
+      expect(bst.root).toBeNull();
+
+      // Current tree: (empty)
+
+      expect(bst.breadthFirstSearch(10)).toBe(false);
+    });
+
+    test('should return true for breadth-first search for a node present in a single-node tree', () => {
+      bst.insert(10);
+
+      // Current tree:
+      //     10
+
+      expect(bst.breadthFirstSearch(10)).toBe(true);
+    });
+
+    test('should return false for breadth-first search for a node not present in a single-node tree', () => {
+      bst.insert(10);
+
+      // Current tree:
+      //     10
+
+      expect(bst.breadthFirstSearch(5)).toBe(false);
+    });
+
+    test('should return true for breadth-first search for a node present in a multi-node tree', () => {
+      bst.insert(10);
+      bst.insert(5);
+      bst.insert(15);
+
+      // Current tree:
+      //     10
+      //    /  \
+      //   5    15
+
+      expect(bst.breadthFirstSearch(15)).toBe(true);
+    });
+
+    test('should return false for breadth-first search for a node not present in a multi-node tree', () => {
+      bst.insert(10);
+      bst.insert(5);
+      bst.insert(15);
+
+      // Current tree:
+      //     10
+      //    /  \
+      //   5    15
+
+      expect(bst.breadthFirstSearch(7)).toBe(false);
+    });
+  });
 });
 

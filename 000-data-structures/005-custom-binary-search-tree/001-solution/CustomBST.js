@@ -131,93 +131,9 @@ class CustomBST {
     }
   }
 
-  depthFirstTraversal() {
-    const result = [];
-    
-    if (this.root === null) {
-      return result;
-    }
-
-    const stack = [];
-    stack.push(this.root);
-
-    while (stack.length > 0) {
-      const node = stack.pop();
-      result.push(node.key);
-
-      if (node.right !== null) {
-        stack.push(node.right);
-      }
-
-      if (node.left !== null) {
-        stack.push(node.left);
-      }
-    }
-
-    return result;
-  }
-
-  depthFirstTraversalRecursive() {
-    const result = [];
-    this.#dfsRecursive(this.root, result);
-    return result;
-  }
-
-  #dfsRecursive(node, result) {
-    if (node !== null) {
-      result.push(node.key);
-      this.#dfsRecursive(node.left, result);
-      this.#dfsRecursive(node.right, result);
-    }
-  }
-
-  depthFirstSearch(key) {
-    if (this.root === null) {
-      return false;
-    }
-
-    const stack = [];
-    stack.push(this.root);
-
-    while (stack.length > 0) {
-      const node = stack.pop();
-
-      if (node.key === key) {
-        return true;
-      }
-
-      if (node.right !== null) {
-        stack.push(node.right);
-      }
-
-      if (node.left !== null) {
-        stack.push(node.left);
-      }
-    }
-
-    return false;
-  }
-
-  depthFirstSearchRecursive(key) {
-    return this.#dfsRecursiveSearch(this.root, key);
-  }
-
-  #dfsRecursiveSearch(node, key) {
-    if (node === null) {
-      return false;
-    }
-
-    if (node.key === key) {
-      return true;
-    }
-
-    return this.#dfsRecursiveSearch(node.left, key) ||
-      this.#dfsRecursiveSearch(node.right, key);
-  }
-
   breadthFirstTraversal() {
     const result = [];
-    
+
     if (this.root === null) {
       return result;
     }
@@ -266,6 +182,90 @@ class CustomBST {
     }
 
     return false;
+  }
+
+  depthFirstTraversal() {
+    const result = [];
+    
+    if (this.root === null) {
+      return result;
+    }
+
+    const stack = [];
+    stack.push(this.root);
+
+    while (stack.length > 0) {
+      const node = stack.pop();
+      result.push(node.key);
+
+      if (node.right !== null) {
+        stack.push(node.right);
+      }
+
+      if (node.left !== null) {
+        stack.push(node.left);
+      }
+    }
+
+    return result;
+  }
+
+  depthFirstSearch(key) {
+    if (this.root === null) {
+      return false;
+    }
+
+    const stack = [];
+    stack.push(this.root);
+
+    while (stack.length > 0) {
+      const node = stack.pop();
+
+      if (node.key === key) {
+        return true;
+      }
+
+      if (node.right !== null) {
+        stack.push(node.right);
+      }
+
+      if (node.left !== null) {
+        stack.push(node.left);
+      }
+    }
+
+    return false;
+  }
+
+  depthFirstTraversalRecursive() {
+    const result = [];
+    this.#dfsRecursive(this.root, result);
+    return result;
+  }
+
+  #dfsRecursive(node, result) {
+    if (node !== null) {
+      result.push(node.key);
+      this.#dfsRecursive(node.left, result);
+      this.#dfsRecursive(node.right, result);
+    }
+  }
+
+  depthFirstSearchRecursive(key) {
+    return this.#dfsRecursiveSearch(this.root, key);
+  }
+
+  #dfsRecursiveSearch(node, key) {
+    if (node === null) {
+      return false;
+    }
+
+    if (node.key === key) {
+      return true;
+    }
+
+    return this.#dfsRecursiveSearch(node.left, key) ||
+      this.#dfsRecursiveSearch(node.right, key);
   }
 }
 

@@ -24,14 +24,14 @@ cd javascript-coding-problems
 npm run test
 ```
 
-5. Run all tests, verbose mode
-
-```bash
-npm run test:v
-```
-
 6. Run all tests, watch mode
 
 ```bash
 npm run test:w
+```
+
+7. Run specific test
+
+```bash
+npm run test -- 001-factorial
 ```

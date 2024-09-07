@@ -40,6 +40,10 @@ export const sharedTests = (getSolution) => {
   test('should throw an error if not a number', () => {
     expect(() => solution.factorial('foo'))
       .toThrowError('Invalid input');
+    expect(() => solution.factorial(null))
+      .toThrowError('Invalid input');
+    expect(() => solution.factorial(undefined))
+      .toThrowError('Invalid input');
   });
 
   test('should throw an error for negative numbers', () => {

@@ -12,16 +12,16 @@ class Solution {
   countAllOccurences(arr, key) {
     validateInput(arr, key);
 
-    return this.#countAllOccurencesIdx(arr, key, 0);
+    return this.#countAllOccurences(arr, key, 0);
   }
 
-  #countAllOccurencesIdx(arr, key, idx) {
+  #countAllOccurences(arr, key, idx) {
     if (idx === arr.length) {
       return 0;
     }
     
     return this.#incrementIfMatch(arr, key, idx)
-      + this.#countAllOccurencesIdx(arr, key, idx + 1);
+      + this.#countAllOccurences(arr, key, idx + 1);
   }
 
   #incrementIfMatch(arr, key, idx) {

@@ -2,7 +2,7 @@ import { validateInput } from "../helpers/validateInput";
 
 /**
  * Check if a string is a palindrome
- * Approach: Recursion (using slice)
+ * Approach: Recursion
  * 
  * Time complexity: O(n)
  * Space complexity: O(n)
@@ -22,7 +22,7 @@ class Solution {
       return false;
     }
 
-    return this.isPalindrome(str.slice(1, - 1));
+    return this.isPalindrome(str.substring(1, n - 1));
   }
 }
 

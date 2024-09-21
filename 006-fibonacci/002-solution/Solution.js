@@ -17,15 +17,15 @@ class Solution {
     }
 
     const f = [0, 1];
-    return this.#fibonacciMemo(n, f);
+    return this.#fibonacci(n, f);
   }
 
-  #fibonacciMemo(n, f) {
+  #fibonacci(n, f) {
     if (f[n] !== undefined) {
       return f[n];
     }
 
-    f[n] = this.#fibonacciMemo(n - 1, f) + this.#fibonacciMemo(n - 2, f);
+    f[n] = this.#fibonacci(n - 1, f) + this.#fibonacci(n - 2, f);
     return f[n];
   }
 }

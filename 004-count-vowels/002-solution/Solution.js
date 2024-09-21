@@ -12,17 +12,18 @@ class Solution {
   countVowels(str) {
     validateInput(str);
 
-    const strLen = str.length;
-    
-    switch (strLen) {
-      case 0:
-        return 0;
-      case 1:
-        return this.#incrementIfVowel(str[0]);
-      default:
-        return this.countVowels(str.slice(0, -1))
-          + this.#incrementIfVowel(str[strLen - 1]);
+    const n = str.length;
+  
+    if (n === 0) {
+      return 0;
     }
+
+    if (n === 1) {
+      return this.#incrementIfVowel(str[0]);
+    }
+
+    return this.countVowels(str.slice(0, -1))
+      + this.#incrementIfVowel(str[n - 1]);
   }
 
   #incrementIfVowel(char) {

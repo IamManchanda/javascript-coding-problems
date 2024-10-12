@@ -34,6 +34,12 @@ export const sharedTests = (getSolution) => {
     expect(() => solution.mergeAlternately("abc", "a b c")).toThrow("Invalid characters");
   });
 
+  test("should throw an error if the input is too long", () => {
+    expect(() => solution.mergeAlternately("a".repeat(101), "abc")).toThrow("Strings are too long");
+    expect(() => solution.mergeAlternately("abc", "a".repeat(101))).toThrow("Strings are too long");
+    expect(() => solution.mergeAlternately("a".repeat(101), "a".repeat(101))).toThrow("Strings are too long");
+  });
+
   test("should not throw an error if the input is valid", () => {
     expect(() => solution.mergeAlternately("abc", "def")).not.toThrow();
   });

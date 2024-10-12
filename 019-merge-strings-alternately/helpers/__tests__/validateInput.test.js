@@ -19,6 +19,12 @@ describe("validateInput", () => {
     expect(() => validateInput("abc", "a b c")).toThrow("Invalid characters");
   });
 
+  test("should throw an error if the input is too long", () => {
+    expect(() => validateInput("a".repeat(101), "abc")).toThrow("Strings are too long");
+    expect(() => validateInput("abc", "a".repeat(101))).toThrow("Strings are too long");
+    expect(() => validateInput("a".repeat(101), "a".repeat(101))).toThrow("Strings are too long");
+  });
+
   test("should not throw an error if the input is valid", () => {
     expect(() => validateInput("abc", "def")).not.toThrow();
   });

@@ -10,4 +10,8 @@ export const validateInput = (word1, word2) => {
   if (!/^[a-z]*$/.test(word1) || !/^[a-z]*$/.test(word2)) {
     throw new Error('Invalid characters');
   }
+
+  if (word1.length > 100 || word2.length > 100) {
+    throw new Error('Strings are too long');
+  }
 }

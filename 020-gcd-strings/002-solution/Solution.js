@@ -4,9 +4,9 @@ import { validateInput } from "../helpers/validateInput";
  * Greatest Common Divisor of Strings
  * https://leetcode.com/problems/greatest-common-divisor-of-strings/
  * 
- * Approach: Euclidean Algorithm (GCD) - Recursive
+ * Approach: Euclidean Algorithm (GCD) - Iterative
  * Time complexity: O(n)
- * Space complexity: O(n)
+ * Space complexity: O(1)
  */
 
 class Solution {
@@ -17,16 +17,14 @@ class Solution {
       return "";
     }
 
-    return this.#gcd(str1, str2);
-  }
+    let a = str1.length, b = str2.length;
 
-  #gcd(a, b) {
-    if (b.length === 0) {
-      return a;
+    while (b !== 0) {
+      // gcd(a, b) = gcd(b, a % b)
+      [a, b] = [b, a % b];
     }
 
-    // gcd(a, b) = gcd(b, a % b)
-    return this.#gcd(b, a.slice(0, a.length % b.length));
+    return str1.slice(0, a);
   }
 }
 

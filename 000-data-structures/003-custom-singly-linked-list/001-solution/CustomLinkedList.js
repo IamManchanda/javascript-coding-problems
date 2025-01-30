@@ -54,6 +54,7 @@ class CustomLinkedList {
     }
 
     const newNode = new Node(data, prevNode.next);
+    
     prevNode.next = newNode;
 
     if (prevNode === this.tail) {

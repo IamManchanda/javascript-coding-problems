@@ -8,6 +8,7 @@
   - [Hash Table (using an object)](#hash-table-using-an-object)
   - [Hash Table (using a set)](#hash-table-using-a-set)
   - [Sorting + Two Pointers](#sorting--two-pointers)
+- [Test Results](#test-results)
 
 ## Problem
 
@@ -30,3 +31,7 @@
 ### Sorting + Two Pointers
 
 ![Two Number Sum](./004-solution.png)
+
+## Test Results
+
+![Two Number Sum](./test-results.png)

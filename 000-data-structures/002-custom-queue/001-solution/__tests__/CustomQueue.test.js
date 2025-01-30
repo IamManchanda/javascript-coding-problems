@@ -7,9 +7,50 @@ describe('CustomQueue', () => {
     queue = new CustomQueue();
   });
 
+  test('add items first to the queue', () => {
+    queue.addFirst(1);
+    queue.addFirst(2);
+    queue.addFirst(3);
+    expect(queue.size()).toBe(3);
+
+    const queuePrint = queue.printQueue();
+    expect(queuePrint).toBe('3 <- 2 <- 1');
+  });
+
+  test('add items last to the queue', () => {
+    queue.addLast(1, 2);
+    queue.addLast(3);
+    expect(queue.size()).toBe(3);
+
+    const queuePrint = queue.printQueue();
+    expect(queuePrint).toBe('1 <- 2 <- 3');
+  });
+
   test('enqueue items to the queue', () => {
+    queue.enqueue(1, 2);
+    queue.enqueue(3);
+    expect(queue.size()).toBe(3);
+
+    const queuePrint = queue.printQueue();
+    expect(queuePrint).toBe('1 <- 2 <- 3');
+  });
+
+  test('remove first item from the queue', () => {
     queue.enqueue(1, 2, 3);
     expect(queue.size()).toBe(3);
+
+    const removed = queue.removeFirst();
+    expect(removed).toBe(1);
+    expect(queue.size()).toBe(2);
+  });
+
+  test('remove last item from the queue', () => {
+    queue.enqueue(1, 2, 3);
+    expect(queue.size()).toBe(3);
+
+    const removed = queue.removeLast();
+    expect(removed).toBe(3);
+    expect(queue.size()).toBe(2);
   });
 
   test('dequeue item from the queue', () => {

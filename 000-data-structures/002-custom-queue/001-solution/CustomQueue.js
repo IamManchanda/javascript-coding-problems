@@ -1,5 +1,6 @@
 /**
  * Custom Queue using Arrays
+ * Also includes double-ended queue methods
  */
 
 class CustomQueue {
@@ -7,12 +8,28 @@ class CustomQueue {
     this.queue = [];
   }
 
-  enqueue(...items) {
+  addFirst(item) {
+    this.queue.unshift(item);
+  }
+
+  addLast(...items) {
     this.queue.push(...items);
   }
 
-  dequeue() {
+  enqueue(...items) {
+    this.addLast(...items); // this.queue.push(...items);
+  }
+
+  removeFirst() {
     return this.queue.shift();
+  }
+
+  removeLast() {
+    return this.queue.pop();
+  }
+
+  dequeue() {
+    return this.removeFirst(); // this.queue.shift();
   }
 
   peek() {

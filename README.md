@@ -33,5 +33,5 @@ npm run test:w
 7. Run specific test
 
 ```bash
-npm run test -- 001-factorial
+npm run test -- 001-chaicode/001-factorial
 ```

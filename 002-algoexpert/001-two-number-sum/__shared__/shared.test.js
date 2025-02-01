@@ -143,7 +143,7 @@ export const sharedTests = (getSolution) => {
   afterEach(() => {
     actualOutput = solution.twoNumberSum(input.array, input.targetSum);
 
-    if (Array.isArray(expectedOutput) && expectedOutput.length === 0) {
+    if (expectedOutput.length === 0) {
       expect(actualOutput).toEqual([]);
     }
 

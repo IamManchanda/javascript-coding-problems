@@ -18,20 +18,14 @@ git clone git@github.com:IamManchanda/javascript-coding-problems.git
 cd javascript-coding-problems
 ```
 
-4. Run all tests
-
-```bash
-npm run test
-```
-
-6. Run all tests, watch mode
-
-```bash
-npm run test:w
-```
-
-7. Run specific test
+4. Run specific test for a problem
 
 ```bash
 npm run test -- 001-chaicode/001-factorial
+```
+
+5. Watch specific test for a problem
+
+```bash
+npm run test:w -- 001-chaicode/001-factorial
 ```

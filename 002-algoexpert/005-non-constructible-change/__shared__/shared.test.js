@@ -1,11 +1,10 @@
 export const sharedTests = (getSolution) => {
-  let solution, input, expectedOutput, actualOutput;
+  let solution, input, expectedOutput;
 
   beforeEach(() => {
     solution = getSolution();
     input = {};
     expectedOutput = undefined;
-    actualOutput = undefined;
   });
 
   test(`Test Case 1: {
@@ -139,7 +138,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    actualOutput = solution.nonConstructibleChange(input.coins);
+    const actualOutput = solution.nonConstructibleChange(input.coins);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

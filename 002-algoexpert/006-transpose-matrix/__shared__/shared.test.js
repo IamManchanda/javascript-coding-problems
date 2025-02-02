@@ -1,11 +1,10 @@
 export const sharedTests = (getSolution) => {
-  let solution, input, expectedOutput, actualOutput;
+  let solution, input, expectedOutput;
 
   beforeEach(() => {
     solution = getSolution();
     input = {};
     expectedOutput = undefined;
-    actualOutput = undefined;
   });
 
   test(`Test Case 1: {
@@ -245,7 +244,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    actualOutput = solution.transposeMatrix(input.matrix);
+    const actualOutput = solution.transposeMatrix(input.matrix);
     expect(actualOutput).toStrictEqual(expectedOutput);
   });
 };

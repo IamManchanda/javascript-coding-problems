@@ -1,6 +1,6 @@
 # Smallest Difference
 
-<https://www.algoexpert.io/questions/three-number-sum>
+<https://www.algoexpert.io/questions/smallest-difference>
 
 - [Problem](#problem)
 - [Solution](#solution)

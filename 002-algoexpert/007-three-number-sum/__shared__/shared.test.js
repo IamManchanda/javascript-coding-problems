@@ -8,8 +8,6 @@ export const sharedTests = (getSolution) => {
     actualOutput = undefined;
   });
 
-  /* https://www.algoexpert.io/questions/three-number-sum */
-
   test(`Test Case 1: {
       "input": { "array": [12, 3, 1, 2, -6, 5, 0, -8, -1], "targetSum": 0 },
       "expectedOutput": [[-8, 3, 5], [-6, 1, 5], [-1, 0, 1]]

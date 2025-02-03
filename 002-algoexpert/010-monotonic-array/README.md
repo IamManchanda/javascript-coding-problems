@@ -4,6 +4,8 @@
 
 - [Problem](#problem)
 - [Solution](#solution)
+  - [Direction Tracking](#direction-tracking)
+  - [One Pass](#one-pass)
 - [Test Results](#test-results)
 
 ## Problem

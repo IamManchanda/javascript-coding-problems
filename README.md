@@ -21,11 +21,11 @@ cd javascript-coding-problems
 4. Run specific test for a problem
 
 ```bash
-npm run test -- 001-chaicode/001-factorial
+npm run test -- 001-general-practise/001-factorial
 ```
 
 5. Watch specific test for a problem
 
 ```bash
-npm run test:w -- 001-chaicode/001-factorial
+npm run test:w -- 001-general-practise/001-factorial
 ```

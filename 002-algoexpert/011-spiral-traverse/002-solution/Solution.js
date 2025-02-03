@@ -5,6 +5,8 @@
  * Approach: Recursive Traversal
  * Time complexity: O(n * m)
  * Space complexity: O(n * m)
+ * where, n is the number of rows 
+ * and, m is the number of columns
  */
 
 class Solution {

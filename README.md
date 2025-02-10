@@ -1,4 +1,4 @@
-# [WIP] JavaScript Coding (DSA) Problems
+# JavaScript Coding (DSA) Problems
 
 Work in progress, will be adding more problems and solutions.
 

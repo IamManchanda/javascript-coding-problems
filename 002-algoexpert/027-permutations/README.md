@@ -5,6 +5,7 @@
 - [Problem](#problem)
 - [Solution](#solution)
   - [Recursion](#recursion)
+  - [Swapping + Recursion](#swapping--recursion)
 - [Test Results](#test-results)
 
 ## Problem

@@ -1,6 +1,6 @@
 /**
  * Permutations
- * https://www.algoexpert.io/questions/perms
+ * https://www.algoexpert.io/questions/permutations
  * 
  * Approach: Recursion
  * Time Complexity: O(n^2 * n!)

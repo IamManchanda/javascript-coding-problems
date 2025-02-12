@@ -10,12 +10,16 @@
  */
 
 class Solution {
-  productSum(array, depth = 1) {
+  productSum(array) {
+    return this.prodSum(array, 1);
+  }
+  
+  prodSum(array, depth) {
     let sum = 0;
 
     for (const element of array) {
       if (Array.isArray(element)) {
-        sum += this.productSum(element, depth + 1);
+        sum += this.prodSum(element, depth + 1);
       } else {
         sum += element;
       }

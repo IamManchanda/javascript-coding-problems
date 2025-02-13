@@ -1,6 +1,6 @@
-# Run-Length Encoding
+# Common Characters
 
-<https://www.algoexpert.io/questions/caesar-cipher-encryptor>
+<https://www.algoexpert.io/questions/common-characters>
 
 - [Problem](#problem)
 - [Solution](#solution)
@@ -9,14 +9,14 @@
 
 ## Problem
 
-![Run-Length Encoding](./question.png)
+![Common Characters](./question.png)
 
 ## Solution
 
 ### Iterative
 
-![Run-Length Encoding](./001-solution.png)
+![Common Characters](./001-solution.png)
 
 ## Test Results
 
-![Run-Length Encoding](./test-results.png)
+![Common Characters](./test-results.png)

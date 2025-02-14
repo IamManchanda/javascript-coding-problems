@@ -4,6 +4,8 @@
 
 - [Problem](#problem)
 - [Solution](#solution)
+  - [Hash Table (using Map & Set)](#hash-table-using-map--set)
+  - [Smallest String + Hash Table (using Set)](#smallest-string--hash-table-using-set)
 - [Test Results](#test-results)
 
 ## Problem

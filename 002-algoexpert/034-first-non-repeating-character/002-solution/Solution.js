@@ -14,13 +14,13 @@ class Solution {
       asciiA = 'a'.charCodeAt(); // 97
 
     for (const char of string) {
-      const charCode = char.charCodeAt() - asciiA;
-      charFreqs[charCode]++;
+      const charIdx = char.charCodeAt() - asciiA;
+      charFreqs[charIdx]++;
     }
 
     for (let i = 0; i <= n - 1; i++) {
-      const charCode = string[i].charCodeAt() - asciiA;
-      if (charFreqs[charCode] === 1) return i;
+      const charIdx = string[i].charCodeAt() - asciiA;
+      if (charFreqs[charIdx] === 1) return i;
     }
 
     return -1;

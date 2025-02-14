@@ -7,8 +7,6 @@ export const sharedTests = (getSolution) => {
     expectedOutput = undefined;
   });
 
-  /* https://www.algoexpert.io/questions/first-non-repeating-character */
-
   test(`Test Case 1: {
     "input": { "string": "abcdcaf" },
     "expectedOutput": 1

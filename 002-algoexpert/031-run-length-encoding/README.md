@@ -1,6 +1,6 @@
-# Common Characters
+# Run Length Encoding
 
-<https://www.algoexpert.io/questions/common-characters>
+<https://www.algoexpert.io/questions/run-length-encoding>
 
 - [Problem](#problem)
 - [Solution](#solution)
@@ -9,14 +9,14 @@
 
 ## Problem
 
-![Common Characters](./question.png)
+![Run Length Encoding](./question.png)
 
 ## Solution
 
 ### Iterative
 
-![Common Characters](./001-solution.png)
+![Run Length Encoding](./001-solution.png)
 
 ## Test Results
 
-![Common Characters](./test-results.png)
+![Run Length Encoding](./test-results.png)

@@ -16,7 +16,7 @@ class Solution {
     const n = scores.length;
     if (n === 1) return 1;
 
-    const rewards = Array(n).fill(1);
+    const rewards = new Array(n).fill(1);
 
     for (let i = 1; i <= n - 1; i++) {
       if (scores[i] > scores[i - 1]) {

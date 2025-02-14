@@ -12,7 +12,7 @@ class Solution {
     const n = scores.length;
     if (n === 1) return 1;
 
-    const rewards = Array(n).fill(1),
+    const rewards = new Array(n).fill(1),
       localMinIndices = this.getLocalMinIndices(scores, n);
 
     for (const localMinIndex of localMinIndices) {

@@ -10,14 +10,13 @@
 class Solution {
   longestPalindromicSubstring(string) {
     const n = string.length;
-    let longest = [0, 1];
+    let longest = [0, 1], longestDiff = 1;
 
     for (let i = 1; i <= n - 1; i++) {
-      const longestDiff = longest[1] - longest[0],
-        [current, currentDiff] = this.getCurrentLongestPalindrome(string, i);
+      const [current, currentDiff] = this.getCurrentLongestPalindrome(string, i);
 
       if (currentDiff > longestDiff) {
-        longest = current;
+        [longest, longestDiff] = [current, currentDiff];
       }
     }
 

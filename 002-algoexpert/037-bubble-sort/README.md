@@ -15,6 +15,8 @@
 
 ### Optimized
 
+[Solution's Visualization Video](https://youtu.be/9I2oOAr2okY)
+
 ![Bubble Sort](./001-solution.png)
 
 ## Test Results

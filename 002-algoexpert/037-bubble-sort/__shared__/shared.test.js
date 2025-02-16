@@ -199,7 +199,7 @@ export const sharedTests = (getSolution) => {
 
   afterEach(() => {
     const actualOutput = solution.bubbleSort(input.array);
-    // expect(actualOutput.length).toBe(expectedOutput.length);
+    expect(actualOutput.length).toBe(expectedOutput.length);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

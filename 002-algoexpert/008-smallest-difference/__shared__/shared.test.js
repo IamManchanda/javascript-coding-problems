@@ -119,11 +119,7 @@ export const sharedTests = (getSolution) => {
 
   afterEach(() => {
     const actualOutput = solution.smallestDifference(input.arrayOne, input.arrayTwo);
-
-    if (expectedOutput.length === 0) {
-      expect(actualOutput).toEqual([]);
-    }
-
+    expect(actualOutput.length).toBe(expectedOutput.length);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

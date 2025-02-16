@@ -162,11 +162,7 @@ export const sharedTests = (getSolution) => {
 
   afterEach(() => {
     const actualOutput = solution.threeNumberSum(input.array, input.targetSum);
-
-    if (expectedOutput.length === 0) {
-      expect(actualOutput).toEqual([]);
-    }
-    
+    expect(actualOutput.length).toBe(expectedOutput.length);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

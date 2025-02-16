@@ -108,7 +108,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.commonCharacters(input.strings);
+    const actualOutput = solution.commonCharacters(input.strings);
     expect(actualOutput).toEqual(expect.arrayContaining(expectedOutput));
   });
 };

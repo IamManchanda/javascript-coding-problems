@@ -142,7 +142,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.caesarCipherEncryptor(input.string, input.key);
+    const actualOutput = solution.caesarCipherEncryptor(input.string, input.key);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

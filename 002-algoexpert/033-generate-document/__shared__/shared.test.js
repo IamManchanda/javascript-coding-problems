@@ -173,7 +173,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.generateDocument(
+    const actualOutput = solution.generateDocument(
       input.characters,
       input.document,
     );

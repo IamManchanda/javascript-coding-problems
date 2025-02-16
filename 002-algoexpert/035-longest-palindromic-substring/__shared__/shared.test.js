@@ -148,7 +148,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.longestPalindromicSubstring(input.string);
+    const actualOutput = solution.longestPalindromicSubstring(input.string);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

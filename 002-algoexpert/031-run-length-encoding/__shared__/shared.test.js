@@ -160,7 +160,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.runLengthEncoding(input.string);
+    const actualOutput = solution.runLengthEncoding(input.string);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

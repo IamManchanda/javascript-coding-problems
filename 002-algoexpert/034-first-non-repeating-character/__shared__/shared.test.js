@@ -158,7 +158,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.firstNonRepeatingCharacter(input.string);
+    const actualOutput = solution.firstNonRepeatingCharacter(input.string);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

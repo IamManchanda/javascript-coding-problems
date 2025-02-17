@@ -1,6 +1,6 @@
 /**
  * Insertion Sort
- * https://www.algoexpert.io/questions/bubble-sort
+ * https://www.algoexpert.io/questions/insertion-sort
  * 
  * Approach: Optimized
  * Time complexity:

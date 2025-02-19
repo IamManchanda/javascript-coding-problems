@@ -5,6 +5,9 @@
  * Approach: Traverse and Validate
  * Time complexity: O(1)
  * Space complexity: O(1)
+ * 
+ * Note: This solution has constant time and space complexity because
+ * the upper bound is known and fixed. It doesn't grow with the input size.
  */
 
 class Solution {

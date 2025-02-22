@@ -7,8 +7,6 @@ export const sharedTests = (getSolution) => {
     expectedOutput = undefined;
   });
 
-  /* https://www.algoexpert.io/questions/kadane's-algorithm */
-
   test(`Test Case 1: {
     "input": { "array": [3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4] },
     "expectedOutput": 19

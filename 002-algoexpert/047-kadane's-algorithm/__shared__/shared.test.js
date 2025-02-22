@@ -198,7 +198,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.kadanesAlgorithm(input.array);
+    const actualOutput = solution.kadanesAlgorithm(input.array);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

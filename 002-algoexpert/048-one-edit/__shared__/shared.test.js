@@ -370,7 +370,7 @@ export const sharedTests = (getSolution) => {
   });
 
   afterEach(() => {
-    let actualOutput = solution.oneEdit(input.stringOne, input.stringTwo);
+    const actualOutput = solution.oneEdit(input.stringOne, input.stringTwo);
     expect(actualOutput).toEqual(expectedOutput);
   });
 };

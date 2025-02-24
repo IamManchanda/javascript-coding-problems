@@ -7,8 +7,6 @@ export const sharedTests = (getSolution) => {
     expectedOutput = undefined;
   });
 
-  /* https://www.algoexpert.io/questions/run-length-encoding */
-
   test(`Test Case 1: {
     "input": { "string": "AAAAAAAAAAAAABBCCCCDD" },
     "expectedOutput": "9A4A2B4C2D",

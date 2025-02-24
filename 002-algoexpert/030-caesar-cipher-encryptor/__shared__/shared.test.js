@@ -7,8 +7,6 @@ export const sharedTests = (getSolution) => {
     expectedOutput = undefined;
   });
 
-  /* https://www.algoexpert.io/questions/caesar-cipher-encryptor */
-
   test(`Test Case 1: {
     "input": { "string": "xyz", "key": 2 },
     "expectedOutput": "zab"

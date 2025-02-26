@@ -25,7 +25,7 @@ class Solution {
       const winningTeamScore = scores.get(winningTeam);
       const currentBestScore = scores.get(currentBestTeam);
 
-      if (winningTeamScore > currentBestScore) {
+      if (currentBestScore < winningTeamScore) {
         currentBestTeam = winningTeam;
       }
     }

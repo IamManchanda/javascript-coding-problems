@@ -21,7 +21,7 @@ class Solution {
 
       this.updateScores(winningTeam, 3, scores);
 
-      if (scores[winningTeam] > scores[currentBestTeam]) {
+      if (scores[currentBestTeam] < scores[winningTeam]) {
         currentBestTeam = winningTeam;
       }
     }

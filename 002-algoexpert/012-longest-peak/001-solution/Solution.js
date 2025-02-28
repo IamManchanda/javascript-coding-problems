@@ -12,7 +12,7 @@ class Solution {
     const n = array.length;
     let longestPeakLength = 0, i = 1;
 
-    while (i < n - 1) {
+    while (i <= n - 2) {
       const isPeak = array[i - 1] < array[i] && array[i] > array[i + 1];
 
       if (!isPeak) {

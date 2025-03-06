@@ -28,7 +28,7 @@ class Solution {
         maxSpace = currSpace;
       }
 
-      l = r;
+      l = r; // move to the next occupied seat
     }
 
     return bestSeatIdx;

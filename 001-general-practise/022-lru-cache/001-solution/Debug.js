@@ -13,4 +13,4 @@ cache.put(4, 50);
 cache.put(5, 60);
 cache.put(6, 70);
 
-console.log(cache.debug());
+console.log(cache.log());

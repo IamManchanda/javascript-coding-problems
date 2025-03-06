@@ -1,3 +1,8 @@
+/**
+ * LRU Cache
+ * https://leetcode.com/problems/lru-cache/
+ */
+
 class Node {
   constructor(key, value) {
     this.key = key;
@@ -10,42 +15,41 @@ class Node {
 class LRUCache {
   constructor(capacity) {
     this.capacity = Number(capacity);
-    this.map = new Map();
+    this.cache = new Map();
     this.head = null;
     this.tail = null;
-    this.length = 0;
   }
 
   get(key) {
-    if (!this.map.has(key)) {
+    if (!this.cache.has(key)) {
       return -1;
     }
 
-    const node = this.map.get(key);
+    const node = this.cache.get(key);
     this.#moveToHead(node);
 
     return node.value;
   }
 
   put(key, value) {
-    if (this.map.has(key)) {
-      const existingNode = this.map.get(key);
+    if (this.cache.has(key)) {
+      const existingNode = this.cache.get(key);
       existingNode.value = value;
       this.#moveToHead(existingNode);
-      
       return;
     }
 
-    if (this.length === this.capacity) {
+    if (this.cache.size === this.capacity) {
       this.#removeNode(this.tail);
     }
 
-    const node = new Node(key, value);
-    this.#addNode(node);
-    this.map.set(key, node);
+    const newNode = new Node(key, value);
+    this.#addNode(newNode);
   }
 
   #moveToHead(node) {
+    if (node === this.head) return;
+
     this.#removeNode(node);
     this.#addNode(node);
   }
@@ -57,14 +61,14 @@ class LRUCache {
     if (this.head) {
       this.head.prev = node;
     }
-    
+
     this.head = node;
 
     if (!this.tail) {
       this.tail = node;
     }
 
-    this.length++;
+    this.cache.set(node.key, node);
   }
 
   #removeNode(node) {
@@ -84,11 +88,10 @@ class LRUCache {
       this.tail = node.prev;
     }
 
-    this.map.delete(node.key);
-    this.length--;
+    this.cache.delete(node.key);
   }
 
-  debug() {
+  log() {
     const arr = [];
     let current = this.head;
 

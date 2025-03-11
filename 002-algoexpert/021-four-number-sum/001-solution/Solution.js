@@ -2,7 +2,7 @@
  * Four Number Sum
  * https://www.algoexpert.io/questions/four-number-sum
  * 
- * Approach: Hash Table (using an object)
+ * Approach: Hash Table (using a Map)
  * Time Complexity: O(n^2)
  * Space Complexity (Average): O(n^2)
  * Space Complexity (Worst): O(n^3)
@@ -15,19 +15,19 @@ class Solution {
   fourNumberSum(array, targetSum) {
     const n = array.length,
       quadruplets = [],
-      allPairSums = {};
+      allPairSums = new Map();
 
     for (let i = 1; i <= n - 2; i++) {
       // for i = 1, not enough previous pairs to form quadruplets
       // so, we skip it
 
-      if (i !== 1) { 
+      if (i !== 1) {
         for (let j = i + 1; j <= n - 1; j++) {
           const currPairSum = array[i] + array[j];
           const complement = targetSum - currPairSum;
 
-          if (complement in allPairSums) {
-            const pairGroup = allPairSums[complement];
+          if (allPairSums.has(complement)) {
+            const pairGroup = allPairSums.get(complement);
 
             for (const pair of pairGroup) {
               const newQuadruplet = [...pair, array[i], array[j]];
@@ -46,11 +46,11 @@ class Solution {
       for (let k = 0; k <= i - 1; k++) {
         const currPairSum = array[k] + array[i];
 
-        if (!(currPairSum in allPairSums)) {
-          allPairSums[currPairSum] = []; // initialize
+        if (!allPairSums.has(currPairSum)) {
+          allPairSums.set(currPairSum, []); // initialize
         }
 
-        allPairSums[currPairSum].push([array[k], array[i]]);
+        allPairSums.get(currPairSum).push([array[k], array[i]]);
       }
     }
 

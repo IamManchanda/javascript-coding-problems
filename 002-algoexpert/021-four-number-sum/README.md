@@ -4,7 +4,6 @@
 
 - [Problem](#problem)
 - [Solution](#solution)
-  - [Hash Table (using an object)](#hash-table-using-an-object)
   - [Hash Table (using a Map)](#hash-table-using-a-map)
 
 ## Problem
@@ -13,10 +12,6 @@
 
 ## Solution
 
-### Hash Table (using an object)
-
-![Four Number Sum](./001-solution.png)
-
 ### Hash Table (using a Map)
 
-![Four Number Sum](./002-solution.png)
+![Four Number Sum](./001-solution.png)

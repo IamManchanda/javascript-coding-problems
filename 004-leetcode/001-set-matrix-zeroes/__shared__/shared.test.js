@@ -43,6 +43,26 @@ export const sharedTests = (getSolution) => {
     ];
   });
 
+  test(`Test Case 3: {
+    "input": { "matrix": [[1, 1, 1, 1], [1, 0, 1, 1], [1, 1, 0, 1], [0, 1, 1, 1]] },
+    "expectedOutput": [[0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+  }`, () => {
+    input = {
+      matrix: [
+        [1, 1, 1, 1],
+        [1, 0, 1, 1],
+        [1, 1, 0, 1],
+        [0, 1, 1, 1],
+      ],
+    };
+    expectedOutput = [
+      [0, 0, 0, 1],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+    ];
+  });
+
   afterEach(() => {
     const actualOutput = solution.setZeroes(input.matrix);
     expect(actualOutput.length).toBe(expectedOutput.length);

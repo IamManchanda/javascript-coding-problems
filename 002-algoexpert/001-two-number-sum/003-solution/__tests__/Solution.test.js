@@ -1,6 +1,6 @@
 import Solution from "../Solution";
 import { sharedTests } from "../../__shared__/shared.test";
 
-describe('twoNumberSum (hash-table-set)', () => {
+describe('twoNumberSum (sorting-two-pointers)', () => {
   sharedTests(() => new Solution());
 });

@@ -5,7 +5,6 @@
 - [Problem](#problem)
 - [Solution](#solution)
   - [Brute Force](#brute-force)
-  - [Hash Table (using an object)](#hash-table-using-an-object)
   - [Hash Table (using a set)](#hash-table-using-a-set)
   - [Sorting + Two Pointers](#sorting--two-pointers)
 - [Test Results](#test-results)
@@ -20,17 +19,13 @@
 
 ![Two Number Sum](./001-solution.png)
 
-### Hash Table (using an object)
+### Hash Table (using a set)
 
 ![Two Number Sum](./002-solution.png)
 
-### Hash Table (using a set)
-
-![Two Number Sum](./003-solution.png)
-
 ### Sorting + Two Pointers
 
-![Two Number Sum](./004-solution.png)
+![Two Number Sum](./003-solution.png)
 
 ## Test Results
 

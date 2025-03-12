@@ -2,7 +2,7 @@
  * Set Matrix Zeroes
  * https://leetcode.com/problems/set-matrix-zeroes/
  * 
- * Approach: Optimized
+ * Approach: Constant Space
  * Time Complexity: O(n * m)
  * Space Complexity: O(1)
  */

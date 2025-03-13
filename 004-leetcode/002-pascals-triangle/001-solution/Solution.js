@@ -12,13 +12,13 @@ class Solution {
     const result = [];
 
     for (let i = 0; i <= numRows - 1; i++) {
-      const curr = [];
+      const row = [];
 
       for (let j = 0; j <= i; j++) {
-        curr.push(this.nCr(i, j));
+        row.push(this.nCr(i, j));
       }
 
-      result.push(curr);
+      result.push(row);
     }
 
     return result;

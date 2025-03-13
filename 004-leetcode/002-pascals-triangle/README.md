@@ -16,11 +16,19 @@
 
 ### Brute Force (+ Combination formula)
 
+![Combination formula](./combination-formula.png)
+
 ![Pascal's Triangle](./001-solution.png)
 
 ### Optimal (+ Combination formula)
 
+![Combination formula](./combination-formula.png)
+
 ![Pascal's Triangle](./002-solution.png)
+
+### Backtracking (Optimized)
+
+![Pascal's Triangle](./003-solution.png)
 
 ## Test Results
 

@@ -26,9 +26,9 @@ export const sharedTests = (getSolution) => {
   });
 
   test(`Test Case 2: {
-    "input": { "matrix": [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]] },
-    "expectedOutput": [[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]
-  }`, () => {
+      "input": { "matrix": [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]] },
+      "expectedOutput": [[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]
+    }`, () => {
     input = {
       matrix: [
         [0, 1, 2, 0],
@@ -44,9 +44,9 @@ export const sharedTests = (getSolution) => {
   });
 
   test(`Test Case 3: {
-    "input": { "matrix": [[1, 1, 1, 1], [1, 0, 1, 1], [1, 1, 0, 1], [0, 1, 1, 1]] },
-    "expectedOutput": [[0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-  }`, () => {
+      "input": { "matrix": [[1, 1, 1, 1], [1, 0, 1, 1], [1, 1, 0, 1], [0, 1, 1, 1]] },
+      "expectedOutput": [[0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+    }`, () => {
     input = {
       matrix: [
         [1, 1, 1, 1],

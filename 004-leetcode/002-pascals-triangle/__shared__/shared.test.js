@@ -18,8 +18,8 @@ export const sharedTests = (getSolution) => {
   });
 
   test(`Test Case 2: {
-    "input": { "numRows": 1 },
-    "expectedOutput": [[1]]
+      "input": { "numRows": 1 },
+      "expectedOutput": [[1]]
     }`, () => {
     input = {
       numRows: 1,

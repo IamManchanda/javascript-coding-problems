@@ -24,14 +24,15 @@ class Solution {
       return nums;
     }
 
-    for (let i = n - 1; i >= bp + 1; i--) {
+    const np = bp + 1; // next point to breaking point
+
+    for (let i = n - 1; i >= np; i--) {
       if (nums[i] > nums[bp]) {
         [nums[i], nums[bp]] = [nums[bp], nums[i]];
         break;
       }
     }
 
-    const np = bp + 1; // next point to breaking point
     nums.splice(np, n - np, ...nums.slice(np).reverse());
 
     return nums;

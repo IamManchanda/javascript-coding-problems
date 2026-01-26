@@ -18,7 +18,8 @@ class CustomLinkedList {
   }
 
   insertFirst(data) {
-    this.head = new Node(data, null, this.head);
+    const currHead = this.head;
+    this.head = new Node(data, null, currHead);
 
     if (!this.tail) {
       this.tail = this.head;
@@ -32,11 +33,11 @@ class CustomLinkedList {
   insertLast(data) {
     if (!this.head) {
       this.insertFirst(data);
-    } else {
-      this.tail.next = new Node(data, this.tail);
-      this.tail = this.tail.next;
+      return;
     }
 
+    this.tail.next = new Node(data, this.tail);
+    this.tail = this.tail.next;
     this.length++;
   }
 
@@ -132,7 +133,7 @@ class CustomLinkedList {
     }
 
     prevNode.next = prevNode.next.next;
-    
+
     if (prevNode.next) {
       prevNode.next.prev = prevNode;
     } else {
@@ -216,16 +217,16 @@ class CustomLinkedList {
   }
 
   printLinkedList() {
-    let str = '';
+    let str = "";
 
     let current = this.head;
     while (current) {
-      str += current.data + ' -> ';
+      str += current.data + " -> ";
       current = current.next;
     }
 
-    str += 'null';
-    
+    str += "null";
+
     return str;
   }
 
@@ -235,7 +236,7 @@ class CustomLinkedList {
     }
 
     let current = this.head;
-    
+
     for (let i = 0; i < index; i++) {
       current = current.next;
     }
